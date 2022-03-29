@@ -5,4 +5,10 @@
 dotnet run
 ```
 
+или 
+
+```
+VS Code: F5
+```
+
 <img src="img.png">
