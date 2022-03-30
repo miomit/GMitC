@@ -18,6 +18,7 @@ namespace GMitC
         : base(builder.GetRawOwnedObject("MainWindow"))
         {
             builder.Autoconnect(this);
+            DeleteEvent += Window_DeleteEvent;
             Cal = new();
             mainLabel.Text = Cal.GetNum();
         }
