@@ -10,12 +10,16 @@ namespace GMitC
         [UI]
         private Label mainLabel;
 
+        private Calculator Cal;
+
         public MainWindow() : this(new Builder("MainWindow.glade")) { }
 
-        private MainWindow(Builder builder) : base(builder.GetRawOwnedObject("MainWindow"))
+        private MainWindow(Builder builder) 
+        : base(builder.GetRawOwnedObject("MainWindow"))
         {
             builder.Autoconnect(this);
-            mainLabel.Text = "";
+            Cal = new();
+            mainLabel.Text = Cal.GetNum();
         }
 
         private void Window_DeleteEvent(object sender, DeleteEventArgs a)
@@ -25,7 +29,7 @@ namespace GMitC
 
         public void OnNumClick (object sender, EventArgs e)
         {
-            mainLabel.Text += ((Button)sender).Label;
+            mainLabel.Text = Cal.AddNum(((Button)sender).Label);
         }
     }
 }
