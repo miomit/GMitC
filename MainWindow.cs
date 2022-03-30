@@ -31,5 +31,15 @@ namespace GMitC
         {
             mainLabel.Text = Cal.AddNum(((Button)sender).Label);
         }
+
+        public void OnBackspace (object sender, EventArgs e)
+        {
+            mainLabel.Text = Cal.Backspace();
+        }
+        
+        public void OnAC (object sender, EventArgs e)
+        {
+            mainLabel.Text = Cal.Clean();
+        }
     }
 }

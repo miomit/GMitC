@@ -20,6 +20,28 @@ namespace GMitC
             return GetNum();
         }
 
+        public string Backspace()
+        {
+            string num = Num.ToString();
+            int nl = num.Length;
+            if (nl <= 1)
+            {
+                Num = 0;
+            }
+            else
+            {
+                Num = Convert.ToDouble(num.Remove(nl - 1));
+            }
+            
+            return GetNum();
+        }
+
+        public string Clean()
+        {
+            Num = 0;
+            return GetNum();
+        }
+
         public string GetNum()
         {
             string num = Num.ToString();
