@@ -5,7 +5,7 @@ namespace GMitC
     class Calculator
     {
         double Num = 0;
-        public string AddNum(string num)
+        public void AddNum(string num)
         {
             
             if (Num == 0)
@@ -16,11 +16,9 @@ namespace GMitC
             {
                 Num = Num * 10 + Convert.ToInt16(num);
             }
-            
-            return GetNum();
         }
 
-        public string Backspace()
+        public void Backspace()
         {
             string num = Num.ToString();
             int nl = num.Length;
@@ -32,14 +30,11 @@ namespace GMitC
             {
                 Num = Convert.ToDouble(num.Remove(nl - 1));
             }
-            
-            return GetNum();
         }
 
-        public string Clean()
+        public void Clean()
         {
             Num = 0;
-            return GetNum();
         }
 
         public string GetNum()

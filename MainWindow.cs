@@ -20,7 +20,7 @@ namespace GMitC
             builder.Autoconnect(this);
             DeleteEvent += Window_DeleteEvent;
             Cal = new();
-            mainLabel.Text = Cal.GetNum();
+            UpdateText();
         }
 
         private void Window_DeleteEvent(object sender, DeleteEventArgs a)
@@ -28,19 +28,26 @@ namespace GMitC
             Application.Quit();
         }
 
+        private void UpdateText() {
+            mainLabel.Text = Cal.GetNum();
+        }
+
         public void OnNumClick (object sender, EventArgs e)
         {
-            mainLabel.Text = Cal.AddNum(((Button)sender).Label);
+            Cal.AddNum(((Button)sender).Label);
+            UpdateText();
         }
 
         public void OnBackspace (object sender, EventArgs e)
         {
-            mainLabel.Text = Cal.Backspace();
+            Cal.Backspace();
+            UpdateText();
         }
         
         public void OnAC (object sender, EventArgs e)
         {
-            mainLabel.Text = Cal.Clean();
+            Cal.Clean();
+            UpdateText();
         }
     }
 }
