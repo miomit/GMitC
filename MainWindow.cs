@@ -6,11 +6,23 @@ namespace GMitC
 {
     class MainWindow : Window
     {
-
         [UI]
         private Label mainLabel;
 
-        private Calculator Cal;
+        //private Calculator ;
+
+        private double Number;
+        public double Num
+        {
+            get => Number;  
+            set
+            {
+                Number = value;
+                mainLabel.Text = StrFormat.GetNum(
+                    Number.ToString()
+                );
+            }
+        }
 
         public MainWindow() : this(new Builder("MainWindow.glade")) { }
 
@@ -19,8 +31,7 @@ namespace GMitC
         {
             builder.Autoconnect(this);
             DeleteEvent += Window_DeleteEvent;
-            Cal = new();
-            UpdateText();
+            //Cal = new();
         }
 
         private void Window_DeleteEvent(object sender, DeleteEventArgs a)
@@ -28,26 +39,24 @@ namespace GMitC
             Application.Quit();
         }
 
-        private void UpdateText() {
-            mainLabel.Text = Cal.GetNum();
-        }
-
         public void OnNumClick (object sender, EventArgs e)
         {
-            Cal.AddNum(((Button)sender).Label);
-            UpdateText();
+            Num = StrFormat.AddEnd(
+                Num,
+                ((Button)sender).Label
+            );
         }
 
         public void OnBackspace (object sender, EventArgs e)
         {
-            Cal.Backspace();
-            UpdateText();
+            Num = StrFormat.RemoveEnd(
+                Num.ToString()
+            );
         }
         
         public void OnAC (object sender, EventArgs e)
         {
-            Cal.Clean();
-            UpdateText();
+            Num = 0;
         }
 
         public void OnAdd (object sender, EventArgs e) {}
