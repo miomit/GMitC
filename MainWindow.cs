@@ -49,5 +49,7 @@ namespace GMitC
             Cal.Clean();
             UpdateText();
         }
+
+        public void OnAdd (object sender, EventArgs e) {}
     }
 }
