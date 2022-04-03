@@ -9,17 +9,17 @@ namespace GMitC
         [UI]
         private Label mainLabel;
 
-        //private Calculator ;
+        private Calculator Cal;
 
-        private double Number;
+        private double NumberA, NumberB;
         public double Num
         {
-            get => Number;  
+            get => NumberA;  
             set
             {
-                Number = value;
+                NumberA = value;
                 mainLabel.Text = StrFormat.GetNum(
-                    Number.ToString()
+                    NumberA.ToString()
                 );
             }
         }
@@ -31,7 +31,7 @@ namespace GMitC
         {
             builder.Autoconnect(this);
             DeleteEvent += Window_DeleteEvent;
-            //Cal = new();
+            Cal = new();
         }
 
         private void Window_DeleteEvent(object sender, DeleteEventArgs a)
@@ -59,6 +59,16 @@ namespace GMitC
             Num = 0;
         }
 
-        public void OnAdd (object sender, EventArgs e) {}
+        public void OnCal (object sender, EventArgs e) 
+        {
+            Num = Cal.CalRes(NumberA, NumberB);
+        }
+
+        public void OnAdd (object sender, EventArgs e) 
+        {
+            NumberB = Num;
+            Num = 10;
+            Cal.SetOperation(new Add());
+        }
     }
 }
