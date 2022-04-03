@@ -24,6 +24,22 @@ namespace GMitC
             }
         }
 
+        private bool Opr = false;
+        private bool OprStart 
+        {
+            get => Opr;
+            set
+            {
+                if (!Opr)
+                {
+                    NumberB = Num;
+                    Num = 0;
+                }
+
+                Opr = value;
+            }
+        }
+
         public MainWindow() : this(new Builder("MainWindow.glade")) { }
 
         private MainWindow(Builder builder) 
@@ -49,6 +65,8 @@ namespace GMitC
 
         public void OnBackspace (object sender, EventArgs e)
         {
+            if (OprStart) OprStart = false;
+
             Num = StrFormat.RemoveEnd(
                 Num.ToString()
             );
@@ -61,14 +79,32 @@ namespace GMitC
 
         public void OnCal (object sender, EventArgs e) 
         {
-            Num = Cal.CalRes(NumberA, NumberB);
+            if (OprStart) OprStart = false;
+            Num = Cal.CalRes(NumberB, NumberA);
         }
 
         public void OnAdd (object sender, EventArgs e) 
         {
-            NumberB = Num;
-            Num = 10;
+            OprStart = true;
             Cal.SetOperation(new Add());
+        }
+
+        public void OnSub (object sender, EventArgs e) 
+        {
+            OprStart = true;
+            Cal.SetOperation(new Sub());
+        }
+
+        public void OnMul (object sender, EventArgs e) 
+        {
+            OprStart = true;
+            Cal.SetOperation(new Mul());
+        }
+
+        public void OnDiv (object sender, EventArgs e) 
+        {
+            OprStart = true;
+            Cal.SetOperation(new Div());
         }
     }
 }
