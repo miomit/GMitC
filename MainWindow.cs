@@ -11,100 +11,60 @@ namespace GMitC
 
         private Calculator Cal;
 
-        private double NumberA, NumberB;
-        public double Num
-        {
-            get => NumberA;  
-            set
-            {
-                NumberA = value;
-                mainLabel.Text = StrFormat.GetNum(
-                    NumberA.ToString()
-                );
-            }
-        }
-
-        private bool Opr = false;
-        private bool OprStart 
-        {
-            get => Opr;
-            set
-            {
-                if (!Opr)
-                {
-                    NumberB = Num;
-                    Num = 0;
-                }
-
-                Opr = value;
-            }
-        }
+        private double NumberA;
+        private double? NumberB;
 
         public MainWindow() : this(new Builder("MainWindow.glade")) { }
 
-        private MainWindow(Builder builder) 
-        : base(builder.GetRawOwnedObject("MainWindow"))
+        private MainWindow(Builder builder) : base(builder.GetRawOwnedObject("MainWindow"))
         {
             builder.Autoconnect(this);
             DeleteEvent += Window_DeleteEvent;
+
             Cal = new();
+
+            NumberA = 0;
+            NumberB = null;
         }
 
-        private void Window_DeleteEvent(object sender, DeleteEventArgs a)
-        {
-            Application.Quit();
-        }
+        private void Window_DeleteEvent(object sender, DeleteEventArgs a) => Application.Quit();
 
         public void OnNumClick (object sender, EventArgs e)
         {
-            Num = StrFormat.AddEnd(
-                Num,
+            mainLabel.Text = StrFormat.AddEnd(
+                ref NumberA,
                 ((Button)sender).Label
             );
         }
 
         public void OnBackspace (object sender, EventArgs e)
         {
-            if (OprStart) OprStart = false;
-
-            Num = StrFormat.RemoveEnd(
-                Num.ToString()
+            mainLabel.Text = StrFormat.RemoveEnd(
+                ref NumberA
             );
         }
         
         public void OnAC (object sender, EventArgs e)
         {
-            Num = 0;
+            mainLabel.Text = "0";
+            NumberA = 0;
         }
 
-        public void OnCal (object sender, EventArgs e) 
+        public void OnAction (object sender, EventArgs e)
         {
-            if (OprStart) OprStart = false;
-            Num = Cal.CalRes(NumberB, NumberA);
-        }
+            if (NumberB is not null && Cal.IsOperation()) NumberB = Cal.CalRes(NumberB ?? 0, NumberA); 
+            else NumberB = NumberA;
 
-        public void OnAdd (object sender, EventArgs e) 
-        {
-            OprStart = true;
-            Cal.SetOperation(new Add());
+            NumberA = 0;
+            mainLabel.Text = NumberB.ToString();
         }
+        
+        public void OnAdd (object sender, EventArgs e) => Cal.SetOperation(new Add());
 
-        public void OnSub (object sender, EventArgs e) 
-        {
-            OprStart = true;
-            Cal.SetOperation(new Sub());
-        }
+        public void OnSub (object sender, EventArgs e) => Cal.SetOperation(new Sub());
 
-        public void OnMul (object sender, EventArgs e) 
-        {
-            OprStart = true;
-            Cal.SetOperation(new Mul());
-        }
+        public void OnMul (object sender, EventArgs e) => Cal.SetOperation(new Mul());
 
-        public void OnDiv (object sender, EventArgs e) 
-        {
-            OprStart = true;
-            Cal.SetOperation(new Div());
-        }
+        public void OnDiv (object sender, EventArgs e) => Cal.SetOperation(new Div());
     }
 }

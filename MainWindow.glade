@@ -149,6 +149,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="OnAction" swapped="no"/>
                 <signal name="clicked" handler="OnDiv" swapped="no"/>
               </object>
               <packing>
@@ -201,7 +202,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
-                <signal name="clicked" handler="OnCal" swapped="no"/>
+                <signal name="clicked" handler="OnAction" swapped="no"/>
               </object>
               <packing>
                 <property name="left-attach">2</property>
@@ -215,6 +216,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="OnAction" swapped="no"/>
                 <signal name="clicked" handler="OnMul" swapped="no"/>
               </object>
               <packing>
@@ -267,6 +269,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="OnAction" swapped="no"/>
                 <signal name="clicked" handler="OnSub" swapped="no"/>
               </object>
               <packing>
@@ -319,6 +322,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="OnAction" swapped="no"/>
                 <signal name="clicked" handler="OnAdd" swapped="no"/>
               </object>
               <packing>

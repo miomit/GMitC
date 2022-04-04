@@ -14,23 +14,27 @@ namespace GMitC
             return num;
         }
 
-        public static double RemoveEnd(string num)
+        public static string RemoveEnd(ref double num)
         {
-            int nl = num.Length;
+            string numStr = num.ToString();
+            int nl = numStr.Length;
+
             if (nl <= 1)
             {
-                num = "0";
+                numStr = "0";
             }
             else
             {
-                num = num.Remove(nl - 1);
+                numStr = numStr.Remove(nl - 1);
             }
-            return Convert.ToDouble(num);
+            
+            num = Convert.ToDouble(numStr);
+
+            return numStr;
         }
 
-        public static double AddEnd(double num, string val)
+        public static string AddEnd(ref double num, string val)
         {
-            
             if (num == 0)
             {
                 num = Convert.ToInt16(val);
@@ -40,7 +44,7 @@ namespace GMitC
                 num = num * 10 + Convert.ToInt16(val);
             }
 
-            return num;
+            return num.ToString();
         }
     }
 }
