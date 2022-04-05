@@ -14,7 +14,7 @@ namespace GMitC
         private double NumberA;
         private double? NumberB;
 
-        private bool isAC;
+        private bool IsAC;
 
         public MainWindow() : this(new Builder("MainWindow.glade")) { }
 
@@ -28,7 +28,7 @@ namespace GMitC
             NumberA = 0;
             NumberB = null;
 
-            isAC = false;
+            IsAC = false;
         }
 
         private void Window_DeleteEvent(object sender, DeleteEventArgs a) => Application.Quit();
@@ -40,7 +40,7 @@ namespace GMitC
                 ((Button)sender).Label
             );
 
-            isAC = false;
+            IsAC = false;
         }
 
         public void OnBackspace (object sender, EventArgs e)
@@ -52,14 +52,14 @@ namespace GMitC
         
         public void OnAC (object sender, EventArgs e)
         {
-            if (isAC) 
+            if (IsAC) 
             {
                 Cal.DelOperation();
                 NumberB = null;
             }
             else
             {
-                isAC = true;
+                IsAC = true;
             }
 
             mainLabel.Text = "0";
@@ -74,7 +74,7 @@ namespace GMitC
             NumberA = 0;
             mainLabel.Text = NumberB.ToString();
 
-            isAC = false;
+            IsAC = false;
         }
         
         public void OnAdd (object sender, EventArgs e) => Cal.SetOperation(new Add());
