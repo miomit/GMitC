@@ -350,6 +350,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="OnDot" swapped="no"/>
               </object>
               <packing>
                 <property name="left-attach">1</property>

@@ -14,7 +14,7 @@ namespace GMitC
         private double NumberA;
         private double? NumberB;
 
-        private bool IsAC, IsCal;
+        private bool IsAC, IsCal, IsDot;
 
         public MainWindow() : this(new Builder("MainWindow.glade")) { }
 
@@ -30,6 +30,7 @@ namespace GMitC
 
             IsAC = false;
             IsCal = false;
+            IsDot = false;
         }
 
         private void Window_DeleteEvent(object sender, DeleteEventArgs a) => Application.Quit();
@@ -41,9 +42,13 @@ namespace GMitC
                 NumberA = 0;
             }
 
+            if (NumberA.ToString().Contains(","))
+                IsDot = true;
+
             mainLabel.Text = StrFormat.AddEnd(
                 ref NumberA,
-                ((Button)sender).Label
+                ((Button)sender).Label,
+                IsDot
             );
 
             IsAC = false;
@@ -55,6 +60,9 @@ namespace GMitC
             mainLabel.Text = StrFormat.RemoveEnd(
                 ref NumberA
             );
+
+            if (!NumberA.ToString().Contains(","))
+                IsDot = false;
         }
         
         public void OnAC (object sender, EventArgs e)
@@ -71,8 +79,9 @@ namespace GMitC
 
             mainLabel.Text = "0";
             NumberA = 0;
-        }
 
+            IsDot = false;
+        }
         public void OnAction (object sender, EventArgs e)
         {
             if (NumberB is not null && Cal.IsOperation()) NumberB = Cal.CalRes(NumberB ?? 0, NumberA); 
@@ -83,6 +92,7 @@ namespace GMitC
 
             IsAC = false;
             IsCal = false;
+            IsDot = false;
         }
         
         public void OnCal (object sender, EventArgs e)
@@ -93,6 +103,15 @@ namespace GMitC
             Cal.DelOperation();
 
             IsCal = true;
+        }
+
+        public void OnDot (object sender, EventArgs e)
+        { 
+            if (!IsDot)
+            {
+                mainLabel.Text += ",";
+                IsDot = true;
+            }
         }
 
         public void OnAdd (object sender, EventArgs e) => Cal.SetOperation(new Add());

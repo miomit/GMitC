@@ -2,6 +2,6 @@ namespace GMitC
 {
     public class Div : ICalDuo
     {
-        public double Calculate(double a, double b) => System.Math.Round(a / b, 2);
+        public double Calculate(double a, double b) => a / b;
     }
 }

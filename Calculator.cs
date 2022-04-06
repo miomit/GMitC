@@ -13,7 +13,7 @@ namespace GMitC
             if (Operation is null)
                 return -1;//TODO add error @_@
 
-            return Operation.Calculate(a, b);
+            return System.Math.Round(Operation.Calculate(a, b), 2);
         }
         public double CalResUno(ICalUno op, double a) => op.Calculate(a);
     }

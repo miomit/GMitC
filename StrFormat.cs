@@ -33,15 +33,32 @@ namespace GMitC
             return numStr;
         }
 
-        public static string AddEnd(ref double num, string val)
+        public static string AddEnd(ref double num, string val, bool isDot)
         {
             if (num == 0)
             {
-                num = Convert.ToInt16(val);
+                if (isDot)
+                    num = Convert.ToDouble("0," + val);
+                else
+                    num = Convert.ToDouble(val);
             }
             else
             {
-                num = num * 10 + Convert.ToInt16(val);
+                if (isDot)
+                {
+                    if (!num.ToString().Contains(","))
+                    {
+                        num = Convert.ToDouble(num.ToString() + "," + val);
+                    }
+                    else
+                    {
+                        num = Convert.ToDouble(num.ToString() + val);
+                    }
+                }
+                else
+                {
+                    num = num * 10 + Convert.ToInt16(val);
+                }
             }
 
             return num.ToString();
