@@ -1,3 +1,4 @@
 /.vscode
 /MainWindow.glade~
 /bin
+/obj/Debug
