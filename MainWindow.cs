@@ -23,7 +23,7 @@ namespace GMitC
             {
                 AStr = value;
                 NumberA = Convert.ToDouble(value);
-                mainLabel.Text = value;
+                mainLabel.Text = StrFormat.GetNum(value);
             }
         }
 
@@ -107,7 +107,7 @@ namespace GMitC
             NumberA = 0;
             AStr = "0";
 
-            mainLabel.Text = NumberB.ToString();
+            mainLabel.Text = StrFormat.GetNum(NumberB.ToString());
 
             IsAC = false;
             IsCal = false;
