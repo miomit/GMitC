@@ -62,7 +62,7 @@ namespace GMitC
                 IsDot = true;
 
             NumberAStr = StrFormat.AddEnd(
-                in NumberA,
+                in AStr,
                 ((Button)sender).Label,
                 IsDot
             );
@@ -74,7 +74,7 @@ namespace GMitC
         public void OnBackspace (object sender, EventArgs e)
         {
             NumberAStr = StrFormat.RemoveEnd(
-                in NumberA
+                in AStr
             );
 
             if (!NumberAStr.Contains(","))

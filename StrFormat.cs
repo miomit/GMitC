@@ -14,9 +14,9 @@ namespace GMitC
             return num;
         }
 
-        public static string RemoveEnd(in double num)
+        public static string RemoveEnd(in string num)
         {
-            string numStr = num.ToString();
+            string numStr = num;
             int nl = numStr.Length;
 
             if (nl <= 1)
@@ -33,12 +33,12 @@ namespace GMitC
             return numStr;
         }
 
-        public static string AddEnd(in double num, string val, bool isDot)
+        public static string AddEnd(in string num, string val, bool isDot)
         {
-            if (num == 0)
+            if (Convert.ToDouble(num) == 0)
             {
                 if (isDot)
-                    return "0," + val;
+                    return num + val;
                 else
                     return val;
             }
@@ -46,18 +46,18 @@ namespace GMitC
             {
                 if (isDot)
                 {
-                    if (!num.ToString().Contains(","))
+                    if (!num.Contains(","))
                     {
-                        return num.ToString() + "," + val;
+                        return num + "," + val;
                     }
                     else
                     {
-                        return num.ToString() + val;
+                        return num + val;
                     }
                 }
                 else
                 {
-                    return (num * 10 + Convert.ToInt16(val)).ToString();
+                    return num + val;
                 }
             }
         }
