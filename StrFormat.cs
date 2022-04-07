@@ -6,11 +6,28 @@ namespace GMitC
     {
         public static string GetNum(string num)
         {
-            int nl = num.Length;
-            for (int i = 3; i <= nl - (nl % 3); i += 3)
+            int nl;
+
+            if (num.Contains(","))
+            {
+                int range = num[0] == '-'? num.Length- num.IndexOf(',') - 1 : num.Length - num.IndexOf(',');
+                nl = num.Length - range;
+            }
+            else
+            {
+                nl = num.Length;
+            }
+
+            for 
+            (
+                int i = num[0] == '-'? 4 : 3;
+                i <= nl - (nl % 3); 
+                i += 3
+            )
             {
                 num = num.Insert(nl - i, " ");
             }
+
             return num;
         }
 
