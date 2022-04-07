@@ -14,6 +14,19 @@ namespace GMitC
         private double NumberA;
         private double? NumberB;
 
+        private string AStr;
+
+        private string NumberAStr
+        {
+            get => AStr;
+            set
+            {
+                AStr = value;
+                NumberA = Convert.ToDouble(value);
+                mainLabel.Text = value;
+            }
+        }
+
         private bool IsAC, IsCal, IsDot;
 
         public MainWindow() : this(new Builder("MainWindow.glade")) { }
@@ -28,6 +41,8 @@ namespace GMitC
             NumberA = 0;
             NumberB = null;
 
+            AStr = "0";
+
             IsAC = false;
             IsCal = false;
             IsDot = false;
@@ -40,13 +55,14 @@ namespace GMitC
             if (IsCal){
                 NumberB = NumberA;
                 NumberA = 0;
+                AStr = "0";
             }
 
-            if (NumberA.ToString().Contains(","))
+            if (NumberAStr.Contains(","))
                 IsDot = true;
 
-            mainLabel.Text = StrFormat.AddEnd(
-                ref NumberA,
+            NumberAStr = StrFormat.AddEnd(
+                in NumberA,
                 ((Button)sender).Label,
                 IsDot
             );
@@ -57,11 +73,11 @@ namespace GMitC
 
         public void OnBackspace (object sender, EventArgs e)
         {
-            mainLabel.Text = StrFormat.RemoveEnd(
-                ref NumberA
+            NumberAStr = StrFormat.RemoveEnd(
+                in NumberA
             );
 
-            if (!NumberA.ToString().Contains(","))
+            if (!NumberAStr.Contains(","))
                 IsDot = false;
         }
         
@@ -77,8 +93,8 @@ namespace GMitC
                 IsAC = true;
             }
 
-            mainLabel.Text = "0";
-            NumberA = 0;
+            NumberAStr = "0";
+            //NumberA = 0;
 
             IsDot = false;
         }
@@ -87,7 +103,10 @@ namespace GMitC
             if (NumberB is not null && Cal.IsOperation()) NumberB = Cal.CalRes(NumberB ?? 0, NumberA); 
             else NumberB = NumberA;
 
+            //NumberAStr = "0";//TODO check P&R?
             NumberA = 0;
+            AStr = "0";
+
             mainLabel.Text = NumberB.ToString();
 
             IsAC = false;
@@ -98,6 +117,8 @@ namespace GMitC
         public void OnCal (object sender, EventArgs e)
         {
             NumberA = NumberB ?? 0;
+            AStr = NumberA.ToString();
+
             NumberB = null;
 
             Cal.DelOperation();
@@ -109,7 +130,8 @@ namespace GMitC
         { 
             if (!IsDot)
             {
-                mainLabel.Text += ",";
+                if (!NumberAStr.Contains(","))
+                    NumberAStr += ",";
                 IsDot = true;
             }
         }
