@@ -16,6 +16,7 @@ namespace GMitC
             return System.Math.Round(Operation.Calculate(a, b), 2);
         }
         public double CalResUno(ICalUno op, double a) => op.Calculate(a);
+        public double CalResDuo(ICalDuo op, double a, double b) => op.Calculate(a, b);
     }
     
 }
