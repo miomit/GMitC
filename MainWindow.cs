@@ -136,6 +136,18 @@ namespace GMitC
             }
         }
 
+        public void OnPercent (object sender, EventArgs e)
+        { 
+            if (NumberB is not null)
+            {
+                NumberAStr = Cal.CalResDuo(new Percent(), NumberA, NumberB ?? 0).ToString();
+            }
+            else
+            {
+                NumberAStr = Cal.CalResUno(new Percent(), NumberA).ToString();
+            }
+        }
+
         public void OnAdd (object sender, EventArgs e) => Cal.SetOperation(new Add());
 
         public void OnSub (object sender, EventArgs e) => Cal.SetOperation(new Sub());
