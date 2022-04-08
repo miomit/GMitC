@@ -52,7 +52,8 @@ namespace GMitC
 
         public void OnNumClick (object sender, EventArgs e)
         {
-            if (IsCal){
+            if (IsCal)
+            {
                 NumberB = NumberA;
                 NumberA = 0;
                 AStr = "0";
@@ -131,7 +132,13 @@ namespace GMitC
             if (!IsDot)
             {
                 if (!NumberAStr.Contains(","))
+                {
+                    if (IsCal)
+                    {
+                        NumberAStr = "0";
+                    }
                     NumberAStr += ",";
+                }
                 IsDot = true;
             }
         }
