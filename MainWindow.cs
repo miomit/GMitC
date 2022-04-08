@@ -14,6 +14,8 @@ namespace GMitC
         private double NumberA;
         private double? NumberB;
 
+        private double Memory;
+
         private string AStr;
 
         private string NumberAStr
@@ -40,6 +42,8 @@ namespace GMitC
 
             NumberA = 0;
             NumberB = null;
+
+            Memory = 0;
 
             AStr = "0";
 
@@ -154,6 +158,14 @@ namespace GMitC
                 NumberAStr = Cal.CalResUno(new Percent(), NumberA).ToString();
             }
         }
+
+        public void OnMC (object sender, EventArgs e) => Memory = 0;
+
+        public void OnMR (object sender, EventArgs e) => NumberAStr = Memory.ToString();
+
+        public void OnMAdd (object sender, EventArgs e) => Memory += NumberA;
+
+        public void OnMSub (object sender, EventArgs e) => Memory -= NumberA;
 
         public void OnAdd (object sender, EventArgs e) => Cal.SetOperation(new Add());
 
