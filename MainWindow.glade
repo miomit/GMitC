@@ -49,6 +49,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="OnMSub" swapped="no"/>
               </object>
               <packing>
                 <property name="left-attach">2</property>
@@ -61,6 +62,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="OnMAdd" swapped="no"/>
               </object>
               <packing>
                 <property name="left-attach">3</property>
@@ -73,6 +75,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="OnMC" swapped="no"/>
               </object>
               <packing>
                 <property name="left-attach">0</property>
@@ -85,6 +88,7 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="receives-default">True</property>
+                <signal name="clicked" handler="OnMR" swapped="no"/>
               </object>
               <packing>
                 <property name="left-attach">1</property>
