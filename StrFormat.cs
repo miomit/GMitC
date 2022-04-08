@@ -55,7 +55,7 @@ namespace GMitC
             if (Convert.ToDouble(num) == 0)
             {
                 if (isDot)
-                    return num + val;
+                    return num + ',' + val;
                 else
                     return val;
             }
