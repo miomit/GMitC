@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uytZL/pwlrpMHrgTSWFvZsmEdvrF2rOpdaqwDUnJzN9SmGHw2bZwwQ/Amitc3AXnWYJPHiqxO6d4nVoml/5VBQ==",
+  "dgSpecHash": "j/GTbjh4oW697GZNJWGfHidiPFqg5pfnPbZ6cPjxAeW2ikCGGtp5Conb7gFHPPCB1zVMaFmjvUsjmei1aCC3cQ==",
   "success": true,
   "projectFilePath": "/home/yuramovsesyan/Projects/GMitC/GMitC.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,10 @@
     "/home/yuramovsesyan/.nuget/packages/giosharp/3.24.24.34/giosharp.3.24.24.34.nupkg.sha512",
     "/home/yuramovsesyan/.nuget/packages/glibsharp/3.24.24.34/glibsharp.3.24.24.34.nupkg.sha512",
     "/home/yuramovsesyan/.nuget/packages/gtksharp/3.24.24.34/gtksharp.3.24.24.34.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/pangosharp/3.24.24.34/pangosharp.3.24.24.34.nupkg.sha512"
+    "/home/yuramovsesyan/.nuget/packages/pangosharp/3.24.24.34/pangosharp.3.24.24.34.nupkg.sha512",
+    "/home/yuramovsesyan/.nuget/packages/microsoft.netcore.app.runtime.win-x64/6.0.3/microsoft.netcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "/home/yuramovsesyan/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/6.0.3/microsoft.aspnetcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
+    "/home/yuramovsesyan/.nuget/packages/microsoft.netcore.app.host.win-x64/6.0.3/microsoft.netcore.app.host.win-x64.6.0.3.nupkg.sha512"
   ],
   "logs": []
 }
