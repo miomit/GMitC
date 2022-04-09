@@ -7,6 +7,7 @@
     <property name="title" translatable="yes">Сalculator</property>
     <property name="default-width">340</property>
     <property name="default-height">450</property>
+    <property name="icon">ico.png</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
