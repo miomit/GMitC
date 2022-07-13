@@ -1,23 +1,22 @@
 using System;
 using Gtk;
 
-namespace GMitC
+namespace GMitC;
+
+class Program
 {
-    class Program
+    [STAThread]
+    public static void Main(string[] args)
     {
-        [STAThread]
-        public static void Main(string[] args)
-        {
-            Application.Init();
+        Application.Init();
 
-            var app = new Application("org.GMitC.GMitC", GLib.ApplicationFlags.None);
-            app.Register(GLib.Cancellable.Current);
+        var app = new Application("org.GMitC.GMitC", GLib.ApplicationFlags.None);
+        app.Register(GLib.Cancellable.Current);
 
-            var win = new MainWindow();
-            app.AddWindow(win);
+        var win = new MainWindow();
+        app.AddWindow(win);
 
-            win.Show();
-            Application.Run();
-        }
+        win.Show();
+        Application.Run();
     }
 }

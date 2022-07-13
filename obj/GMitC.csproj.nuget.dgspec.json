@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/yuramovsesyan/Projects/GMitC/GMitC.csproj": {}
+    "/home/yura/Documents/source/GMitC/GMitC.csproj": {}
   },
   "projects": {
-    "/home/yuramovsesyan/Projects/GMitC/GMitC.csproj": {
+    "/home/yura/Documents/source/GMitC/GMitC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/yuramovsesyan/Projects/GMitC/GMitC.csproj",
+        "projectUniqueName": "/home/yura/Documents/source/GMitC/GMitC.csproj",
         "projectName": "GMitC",
-        "projectPath": "/home/yuramovsesyan/Projects/GMitC/GMitC.csproj",
-        "packagesPath": "/home/yuramovsesyan/.nuget/packages/",
-        "outputPath": "/home/yuramovsesyan/Projects/GMitC/obj/",
+        "projectPath": "/home/yura/Documents/source/GMitC/GMitC.csproj",
+        "packagesPath": "/home/yura/.nuget/packages/",
+        "outputPath": "/home/yura/Documents/source/GMitC/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/yuramovsesyan/.nuget/NuGet/NuGet.Config"
+          "/home/yura/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -55,16 +55,8 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.3, 6.0.3]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[6.0.3, 6.0.3]"
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.2, 6.0.2]"
             }
           ],
           "frameworkReferences": {
@@ -72,12 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.103/RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }

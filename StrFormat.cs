@@ -1,81 +1,80 @@
 using System;
 
-namespace GMitC
+namespace GMitC;
+
+static class StrFormat
 {
-    static class StrFormat
+    public static string GetNum(string num)
     {
-        public static string GetNum(string num)
+        int nl;
+
+        if (num.Contains(","))
         {
-            int nl;
-
-            if (num.Contains(","))
-            {
-                int range = num[0] == '-'? num.Length- num.IndexOf(',') - 1 : num.Length - num.IndexOf(',');
-                nl = num.Length - range;
-            }
-            else
-            {
-                nl = num.Length;
-            }
-
-            for 
-            (
-                int i = num[0] == '-'? 4 : 3;
-                i <= nl - (nl % 3); 
-                i += 3
-            )
-            {
-                num = num.Insert(nl - i, " ");
-            }
-
-            return num;
+            int range = num[0] == '-'? num.Length- num.IndexOf(',') - 1 : num.Length - num.IndexOf(',');
+            nl = num.Length - range;
+        }
+        else
+        {
+            nl = num.Length;
         }
 
-        public static string RemoveEnd(in string num)
+        for 
+        (
+            int i = num[0] == '-'? 4 : 3;
+            i <= nl - (nl % 3); 
+            i += 3
+        )
         {
-            string numStr = num;
-            int nl = numStr.Length;
-
-            if (nl <= 1)
-            {
-                numStr = "0";
-            }
-            else
-            {
-                numStr = numStr.Remove(nl - 1);
-            }
-            
-            //num = Convert.ToDouble(numStr);
-
-            return numStr;
+            num = num.Insert(nl - i, " ");
         }
 
-        public static string AddEnd(in string num, string val, bool isDot)
+        return num;
+    }
+
+    public static string RemoveEnd(in string num)
+    {
+        string numStr = num;
+        int nl = numStr.Length;
+
+        if (nl <= 1)
         {
-            if (Convert.ToDouble(num) == 0)
-            {
-                if (isDot)
-                    return num + ',' + val;
-                else
-                    return val;
-            }
+            numStr = "0";
+        }
+        else
+        {
+            numStr = numStr.Remove(nl - 1);
+        }
+        
+        //num = Convert.ToDouble(numStr);
+
+        return numStr;
+    }
+
+    public static string AddEnd(in string num, string val, bool isDot)
+    {
+        if (Convert.ToDouble(num) == 0)
+        {
+            if (isDot)
+                return num + ',' + val;
             else
+                return val;
+        }
+        else
+        {
+            if (isDot)
             {
-                if (isDot)
+                if (!num.Contains(","))
                 {
-                    if (!num.Contains(","))
-                    {
-                        return num + "," + val;
-                    }
-                    else
-                    {
-                        return num + val;
-                    }
+                    return num + "," + val;
                 }
                 else
                 {
                     return num + val;
                 }
+            }
+            else
+            {
+                return num + val;
             }
         }
     }

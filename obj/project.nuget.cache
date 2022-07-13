@@ -1,19 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "j/GTbjh4oW697GZNJWGfHidiPFqg5pfnPbZ6cPjxAeW2ikCGGtp5Conb7gFHPPCB1zVMaFmjvUsjmei1aCC3cQ==",
+  "dgSpecHash": "+TGxdq3PaJE/o7zzOP9UNrThA2yary9/dz+TUYj14d2nDTHJdoDnCT0c71kFA4wYX3PytTyW3/w9B5Nbmf4K+A==",
   "success": true,
-  "projectFilePath": "/home/yuramovsesyan/Projects/GMitC/GMitC.csproj",
+  "projectFilePath": "/home/yura/Documents/source/GMitC/GMitC.csproj",
   "expectedPackageFiles": [
-    "/home/yuramovsesyan/.nuget/packages/atksharp/3.24.24.34/atksharp.3.24.24.34.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/cairosharp/3.24.24.34/cairosharp.3.24.24.34.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/gdksharp/3.24.24.34/gdksharp.3.24.24.34.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/giosharp/3.24.24.34/giosharp.3.24.24.34.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/glibsharp/3.24.24.34/glibsharp.3.24.24.34.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/gtksharp/3.24.24.34/gtksharp.3.24.24.34.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/pangosharp/3.24.24.34/pangosharp.3.24.24.34.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/microsoft.netcore.app.runtime.win-x64/6.0.3/microsoft.netcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/6.0.3/microsoft.aspnetcore.app.runtime.win-x64.6.0.3.nupkg.sha512",
-    "/home/yuramovsesyan/.nuget/packages/microsoft.netcore.app.host.win-x64/6.0.3/microsoft.netcore.app.host.win-x64.6.0.3.nupkg.sha512"
+    "/home/yura/.nuget/packages/atksharp/3.24.24.38/atksharp.3.24.24.38.nupkg.sha512",
+    "/home/yura/.nuget/packages/cairosharp/3.24.24.38/cairosharp.3.24.24.38.nupkg.sha512",
+    "/home/yura/.nuget/packages/gdksharp/3.24.24.38/gdksharp.3.24.24.38.nupkg.sha512",
+    "/home/yura/.nuget/packages/giosharp/3.24.24.38/giosharp.3.24.24.38.nupkg.sha512",
+    "/home/yura/.nuget/packages/glibsharp/3.24.24.38/glibsharp.3.24.24.38.nupkg.sha512",
+    "/home/yura/.nuget/packages/gtksharp/3.24.24.38/gtksharp.3.24.24.38.nupkg.sha512",
+    "/home/yura/.nuget/packages/pangosharp/3.24.24.38/pangosharp.3.24.24.38.nupkg.sha512",
+    "/home/yura/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.2/microsoft.aspnetcore.app.ref.6.0.2.nupkg.sha512"
   ],
   "logs": []
 }

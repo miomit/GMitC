@@ -1,7 +1,6 @@
-namespace GMitC
+namespace GMitC;
+
+public class Sub : ICalDuo
 {
-    public class Sub : ICalDuo
-    {
-        public double Calculate(double a, double b) => a - b;
-    }
+    public double Calculate(double a, double b) => a - b;
 }
